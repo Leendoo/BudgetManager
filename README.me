@@ -1,0 +1,9 @@
+Budgethanteraren är ett Java-program där användaren kan lägga till inkomster och utgifter och få en överblick över sin ekonomi. Programmet kan lägga till transaktioner, visa alla transaktioner, räkna ut saldo, visa summa per kategori och filtrera transaktioner. Transaktionerna sparas i en fil och kan läsas in igen när programmet startas.
+
+Projektet använder JUnit 5 för att testa bland annat Repository, BudgetService och filhanteringen. Jag har testat både vanliga fall och felaktiga värden.
+
+Jag använder egna exceptions för att hantera felaktiga värden och problem med filer. Jag använder också loggning för att kunna se vad som händer i programmet och om något går fel.
+
+Under arbetet fick jag problem när mina tester skulle köras eftersom JUnit Assertions inte kunde hittas. Jag såg felet när jag körde testerna med Maven och gick igenom felmeddelandena för att hitta vilken rad som orsakade problemet. Jag upptäckte att importen för Assertions saknades. Efter att jag lade till importen körde jag testerna igen och de fungerade.
+
+Jag använder Generics i Repository<T> för att samma klass ska kunna användas med olika typer av objekt. Jag använder också Stream API för att filtrera transaktioner och räkna ut saldo och summor. Det gör koden kortare och enklare att återanvända.
